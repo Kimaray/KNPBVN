@@ -1,0 +1,79 @@
+CHANGES...
+
+#TEST007#
+*Added intro for a logo or such
+*Reorginized functions
+*Added shortcut to return to main menu during game (ESC)
+*Enabled sound toggle on main menu
+*Fixed character placement when loading from saved game
+
+#TEST008#
+*Added credits
+*Added proper into/logo
+*Added text wrapping
+&Lost transparent story box. need to fix!
+
+#TEST009#
+*Fixed textbox transparency
+*Added rounded textbox, but it's huge and ugly
+*Found a slightly better audio track
+
+#TEST010#
+*Started moving things to config file (config.sec)
+*Changed titles and stuff to something more general
+*Added a delay in the main loop to help control cpu useage, but this is a bandaid at best.
+ Uses about 30% of one of two cores on my Pentium D and 35-40mb of ram.
+*Capped FPS at 20. It's a VN, it doesn't need any more at the moment. Can be changed in config.sec
+*You can now use Japanese in stories if you have an apropriate font(s).
+
+#TEST011#
+*Added more config options
+*Changed how intro screen runs
+*Changed intro screen
+*Rebranding from KNPB to more generic engine name.
+*Reorganized main loop some. Should help CPU use a bit.
+*Added VideoPlay and AudioStart function. Should be easy to figure out what they do.
+*Removed some redundant strings.
+*Changed main screen title font to something that renders better on Windows.
+*Removed TextRenderMainScreen and merged it with just the regular TextRender
+&Credits do not run at a stable FPS and I'm not sure why yet.
+&The menu screen needs to be totaly redone in order to make buttons
+ clickable. It was an afterthought at best and isen't funtional.
+&Game still spikes CPU usage sometimes. I think it has to do with how
+ images are being loaded. CPU spiking is worse on Linux.
+ 
+#TEST012#
+*Update readme
+*Added license
+*Intro can only ever be played once now, it can't be called again.
+*Removed/Made comments in source more readible.
+*Reorginized code so it's more readible.
+*Added BGload/CharLoad funtion.
+*Sound control setting added to config.sec
+*After a ton of work CPU useage has been fully addressed! The game runs stable
+ using under 10% of my CPU (2.13Ghz C2D P7450) 90% of the time under Windows.
+ This is much better than the 30% average (with spikes to 60%) from before.
+*Intro and credits run at a more stable speed now with fewer dropped frames.
+*Removed time import as it's no longer needed
+
+#TEST013#
+*Added debug mode. Enable in dat/config.sec. Here is a list of debug info:
+	CS = Current Scene
+	CC = Current Character
+	DN = Sees if the game has been told to go to credits. If you see True in game something is wrong.
+	DM = Shows if Devmode is enabled or not
+	AP = 0 if audio is not playing, 1 if it is.
+	AM = Shows if audio is paused or not
+	AL = Returns current volume
+ Debug into does not show during the intro or credits. Only while playing and
+ on the main menu.
+
+TODO...
+
+*Fade in/out
+*Sound effects
+*Support multiple characters at once on screen
+*Support changing audio track during game.
+*Better error handling (handling them at all would be nice)
+*Options Menu
+*Info screen

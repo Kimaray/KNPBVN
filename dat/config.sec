@@ -1,0 +1,37 @@
+[dirs]
+backgrounddir = bg
+characterdir = char
+avdir = av
+uidir = ui
+otherdir = other
+
+[files]
+assets = ast.pne
+storycontent = dat/store.sty
+savefile = dat/savefile
+regularfont = fonts/main.ttf
+debugfont = fonts/debug.ttf
+
+[vn_info]
+windowtitle = Koko No Puroguramingu Basho
+mainmenutitle = Koko No Puroguramingu Basho
+devinfo = 
+copyright = (C) 2014 SkyLlama and Taylay
+
+[fonts]
+charactername = 18
+storysize = 18
+menubuttons = 22
+
+[settings]
+gamefps = 30
+videofps = 120
+windowwidth = 800
+windowheight = 600
+debug = False
+devmode = False
+volume = 0.2
+fullscreen = False
+
+[json_info]
+initaltable = scene1
