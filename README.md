@@ -31,4 +31,14 @@ files. If you don't know what you're doing *do not* edit any files!
 
 *Do not change any other options!*
 
+###Debug mode abreviations
+
+* **CS =** Current Scene
+* **CC =** Current Character
+* **DN =** Sees if the game has been told to go to credits. If you see True in game something is wrong.
+* **DM =** Shows if Devmode is enabled or not
+* **AP =** 0 if audio is not playing, 1 if it is.
+* **AM =** Shows if audio is paused or not
+* **AL =** Returns current volume
+
 If you have any questions contact me: compaqxp@gmail.com, http://www.skyllama.com

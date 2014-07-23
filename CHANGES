@@ -67,6 +67,11 @@ CHANGES...
 	AL = Returns current volume
  Debug into does not show during the intro or credits. Only while playing and
  on the main menu.
+ 
+#TEST014#
+*Cleaned up variables so they all follow the same naming convention
+*Cleaned up comments and fixed any spelling mistakes.
+*Added option to run VN full screen or windowed. 
 
 TODO...
 
@@ -77,3 +82,4 @@ TODO...
 *Better error handling (handling them at all would be nice)
 *Options Menu
 *Info screen
+*Multiple saves
