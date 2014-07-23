@@ -26,6 +26,8 @@ files. If you don't know what you're doing *do not* edit any files!
 * **devmode:** True or False, skips the intro and goes right to the main menu
 * **debugmode:** True or False, provides some basic info on what the game is doing.
 * **gamefps:** Accepts an int, is set to 30 by default. I wouldn't set it above 60 though.
+* **volume:** A number from 0.0 to 1.0. Default is 0.2. Changes in game volume.
+* **fullscreen:** True or False, enables or disables fullscreen mode 
 
 *Do not change any other options!*
 
