@@ -31,7 +31,7 @@ files. If you don't know what you're doing *do not* edit any files!
 
 *Do not change any other options!*
 
-###Debug mode abreviations
+###Debug mode abbreviations:
 
 * **CS =** Current Scene
 * **CC =** Current Character
