@@ -14,23 +14,19 @@ files. If you don't know what you're doing *do not* edit any files!
 
 * **Any Mouse Button** - Advance Story
 * **Right Arrow** - Advance Story
-* **Left Arrow** - More back in story
-* **M** - toggle music on or off
-* **S** - saves while in game
-* **Q** - quit (No confirmation, just quits immediately)
-* **ESC** - return to main menu (P to go back to game)
+* **Left Arrow** - Move back in story
+* **M** - Toggle music on or off
+* **S** - Saves while in game
+* **Q** - Quit (No confirmation, just quits immediately)
+* **ESC** - Return to main menu (P to go back to game)
 
 
 ###Config.sec parameters:
 
-**devmode:** True or False, skips the intro and goes right to the main menu
-
-**debugmode:** True or False, provides some basic info on what the game is doing.
-
-**gamefps:** Accepts an int, is set to 30 by default. I wouldn't set it above 60 though.
+* **devmode:** True or False, skips the intro and goes right to the main menu
+* **debugmode:** True or False, provides some basic info on what the game is doing.
+* **gamefps:** Accepts an int, is set to 30 by default. I wouldn't set it above 60 though.
 
 *Do not change any other options!*
 
 If you have any questions contact me: compaqxp@gmail.com, http://www.skyllama.com
-
-(C) Connor Oliver 2014
