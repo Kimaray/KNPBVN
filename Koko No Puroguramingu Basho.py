@@ -17,48 +17,48 @@ class TextRectException:
     def __str__(self):
         return self.message
         
-def TextRectRender(string, font, rect, text_color, background_color, justification=0): #Don't touch this
-    final_lines = []
+def TextRectRender(string, font, rect, textcolour, backgroundcolour, justification=0): #Don't touch this
+    finallines = []
 
     requestedlines = string.splitlines()
 
-    for requested_line in requestedlines:
-        if font.size(requested_line)[0] > rect.width:
-            words = requested_line.split(' ')
+    for requestedline in requestedlines:
+        if font.size(requestedline)[0] > rect.width:
+            words = requestedline.split(' ')
             for word in words:
                 if font.size(word)[0] >= rect.width:
                     raise TextRectException, "The word " + word + " is too long to fit in the rect passed."
-            accumulated_line = ""
+            accumulatedline = ""
             
             for word in words:
-                test_line = accumulated_line + word + " "   
+                test_line = accumulatedline + word + " "   
                 if font.size(test_line)[0] < rect.width:
-                    accumulated_line = test_line 
+                    accumulatedline = test_line 
                 else: 
-                    final_lines.append(accumulated_line) 
-                    accumulated_line = word + " " 
-            final_lines.append(accumulated_line)
+                    finallines.append(accumulatedline) 
+                    accumulatedline = word + " " 
+            finallines.append(accumulatedline)
         else: 
-            final_lines.append(requested_line) 
+            finallines.append(requestedline) 
 
     surface = pygame.Surface(rect.size, pygame.SRCALPHA) 
     surface.fill((150, 150, 150, 0))
 
-    accumulated_height = 0 
-    for line in final_lines: 
-        if accumulated_height + font.size(line)[1] >= rect.height:
-            raise TextRectException, "Once word-wrapped, the text string was too tall to fit in the rect."
+    accumulatedheight = 0 
+    for line in finallines: 
+        if accumulatedheight + font.size(line)[1] >= rect.height:
+            raise TextRectException, "Once wrapped, the text string was too tall to fit in the rect."
         if line != "":
-            tempsurface = font.render(line, 1, text_color)
+            tempsurface = font.render(line, 1, textcolour)
             if justification == 0:
-                surface.blit(tempsurface, (0, accumulated_height))
+                surface.blit(tempsurface, (0, accumulatedheight))
             elif justification == 1:
-                surface.blit(tempsurface, ((rect.width - tempsurface.get_width()) / 2, accumulated_height))
+                surface.blit(tempsurface, ((rect.width - tempsurface.get_width()) / 2, accumulatedheight))
             elif justification == 2:
-                surface.blit(tempsurface, (rect.width - tempsurface.get_width(), accumulated_height))
+                surface.blit(tempsurface, (rect.width - tempsurface.get_width(), accumulatedheight))
             else:
-                raise TextRectException, "Invalid justification argument: " + str(justification)
-        accumulated_height += font.size(line)[1]
+                raise TextRectException, "Invalid justification arg: " + str(justification)
+        accumulatedheight += font.size(line)[1]
 
     return surface
 
@@ -133,29 +133,32 @@ def CharLoad(): #Loads character image
 	return characterimage, characterrect
 	
 def MainMenu(): #Display main menu title/options. This is only temporary and will be redone when the rest of the game works fine.
-	screen.blit(BGLoad()[0], BGLoad()[1])
+	if mainmenurendered == False:
+		screen.blit(BGLoad()[0], BGLoad()[1])
 	
-	MainMenuTitle = config.get('vn_info', 'mainmenutitle')
-	Dev_Info = config.get('vn_info', 'devinfo')
-	Copyright = config.get('vn_info', 'copyright')
-	#Game title
-	screen.blit(TextRender(MainMenuTitle, BLACK, 39, 'titles'), (3, 5))
-	screen.blit(TextRender(Dev_Info, BLACK, 16, 'titles'), (350, 50))
-	screen.blit(TextRender(Copyright, BLACK, 10, 'titles'), (600, 588))
+		MainMenuTitle = config.get('vn_info', 'mainmenutitle')
+		Dev_Info = config.get('vn_info', 'devinfo')
+		Copyright = config.get('vn_info', 'copyright')
+		#Game title
+		screen.blit(TextRender(MainMenuTitle, BLACK, 39, 'titles'), (3, 5))
+		screen.blit(TextRender(Dev_Info, BLACK, 16, 'titles'), (350, 50))
+		screen.blit(TextRender(Copyright, BLACK, 10, 'titles'), (600, 588))
 		
-	#Background for options
-	screen.blit(TransRect(142, 50, 191, 191, 191, 150), (15,535)) #w h r g b a
-	screen.blit(TransRect(142, 50, 191, 191, 191, 150), (172,535))
-	screen.blit(TransRect(142, 50, 191, 191, 191, 150), (329,535))
-	screen.blit(TransRect(142, 50, 191, 191, 191, 150), (486,535))
-	screen.blit(TransRect(142, 50, 191, 191, 191, 150), (643,535))
+		#Background for options
+		screen.blit(TransRect(142, 50, 191, 191, 191, 150), (15,535)) #w h r g b a
+		screen.blit(TransRect(142, 50, 191, 191, 191, 150), (172,535))
+		screen.blit(TransRect(142, 50, 191, 191, 191, 150), (329,535))
+		screen.blit(TransRect(142, 50, 191, 191, 191, 150), (486,535))
+		screen.blit(TransRect(142, 50, 191, 191, 191, 150), (643,535))
 		
-	#Options
-	screen.blit(TextRender("(P)lay", BLACK, menubuttons, 'main'), (55, 547))
-	screen.blit(TextRender("(L)oad", BLACK, menubuttons, 'main'), (210, 547))
-	screen.blit(TextRender("(O)ptions", BLACK, menubuttons, 'main'), (353, 547))
-	screen.blit(TextRender("(I)nfo", BLACK, menubuttons, 'main'), (527, 547))
-	screen.blit(TextRender("(Q)uit", BLACK, menubuttons, 'main'), (682, 547))
+		#Options
+		screen.blit(TextRender("(P)lay", BLACK, menubuttons, 'main'), (55, 547))
+		screen.blit(TextRender("(L)oad", BLACK, menubuttons, 'main'), (210, 547))
+		screen.blit(TextRender("(O)ptions", BLACK, menubuttons, 'main'), (353, 547))
+		screen.blit(TextRender("(I)nfo", BLACK, menubuttons, 'main'), (527, 547))
+		screen.blit(TextRender("(Q)uit", BLACK, menubuttons, 'main'), (682, 547))
+	else:
+		pass
 	return
 	
 def DebugInfo(): #Puts Debug info on screen if DebugMode is set true in config.sec
@@ -233,6 +236,7 @@ StartAudio('music')
 done = False
 audio = True
 fromgame = False
+mainmenurendered = False
 devmode = config.get('settings', 'devmode')
 
 if devmode == 'False':
@@ -257,6 +261,7 @@ while done == False:
 	
 	if menu == True: #This is the code for the main menu. It should always come up after the intro
 		MainMenu()
+		mainmenurendered = True
 		DebugInfo()
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
