@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import pygame
-import json
-import zipfile
-import io
-import pickle
-import ConfigParser
-import re
-from itertools import chain
+try:
+	import pygame
+	import json
+	import zipfile
+	import io
+	import pickle
+	import ConfigParser
+	import re
+	from itertools import chain
+except ImportError, message:
+    raise SystemExit,  "Unable to load module. {}".format(message)
 
 pygame.init()
 
