@@ -41,4 +41,42 @@ files. If you don't know what you're doing *do not* edit any files!
 * **AM =** Shows if audio is paused or not
 * **AL =** Returns current volume
 
+###File structure/description:
+
+-build_win.py: Builds an exe suitable for distribution on Windows systems
+-main.py: Contains the main game loop
+-vnf.py: All of the games functions and most of its variables. Is imported into main.py
+-README.md: The readme file for Github (you're reading it now)
+--av 
+---**intro.vnv**: Intro video, plays when game is launched
+---**credits.vnv**: Credits video, plays when game is finished
+---**music.vnm**: Music that plays in game
+--dat
+---**ast.pne**: Stores all the games assets (images). Is just a zip file at the moment
+---**config.sec**: Store all the games configuration data
+---**savefile**: File that the game uses for saving progress
+---**store.sty**: All the data needed for the story. Is a JSON file. 
+--fonts
+---**debug.ttf**: Font used in debug menu
+---**main.ttf**: Font used for all text in story
+---**titles.ttf**: Font used for title in menu screen, other menus
+--info
+---**CHANGES**: Changelog for each version of the engine
+---**LICENSE**: The BSD 3-clause license that the engine is license under.
+
+###Features being worked on now:
+
+* Multiple characters on screen
+* Moving characters on screen
+* Changing audio tracks in game
+
+###Things to implement in the future:
+
+* Fade in/out
+* Sound effects
+* Better error handling (handling them at all would be nice)
+* Options Menu
+* Info screen
+* Multiple saves
+
 If you have any questions contact me: compaqxp@gmail.com, http://www.skyllama.com
