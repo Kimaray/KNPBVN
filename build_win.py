@@ -34,7 +34,7 @@ class pygame2exe(py2exe.build_exe.py2exe): #This hack make sure that pygame defa
 class BuildExe:
     def __init__(self):
         #Name of starting .py
-        self.script = "Koko No Puroguramingu Basho.py"
+        self.script = "main.py"
  
         #Name of program
         self.project_name = "Koko No Puroguramingu Basho"
@@ -51,7 +51,7 @@ class BuildExe:
         #Auhor of program
         self.author_name = "Connor Oliver"
         self.author_email = "compaqxp@gmail.com"
-        self.copyright = "Copyright (c) 2014 SkyLlama & Taylay"
+        self.copyright = "Copyright (c) 2014 Connor Oliver"
  
         #Description
         self.project_description = "Koko No Puroguramingu Basho"
@@ -60,7 +60,7 @@ class BuildExe:
         self.icon_file = None
  
         #Extra files/dirs copied to game
-        self.extra_datas = ['ast.pne','av','fonts','dat','README.md','LICENSE','CHANGES']
+        self.extra_datas = ['info','av','fonts','dat','README.md']
  
         #Extra/excludes python modules
         self.extra_modules = []

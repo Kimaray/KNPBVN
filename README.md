@@ -1,4 +1,4 @@
-#KNPB 0.14
+#KNPB 0.15
 
 This is a test piece of software. If it crashes your computer or corrupts a file
 it's your own fault. I can not and will not be held responsible for such things.

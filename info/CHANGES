@@ -73,6 +73,14 @@ CHANGES...
 *Cleaned up comments and fixed any spelling mistakes.
 *Added option to run VN full screen or windowed. 
 
+#TEST015#
+*Handles errors when a module can't be properly imported
+*Funtions/most variables split into seperate file (vnf.py). They are now
+ imported into main.py where the main loop is.
+*ast.pne moved to /dat
+*Moved LICENSE and CHANGES to /info
+*Updated build file reflect changes to file locations
+
 TODO...
 
 *Fade in/out
