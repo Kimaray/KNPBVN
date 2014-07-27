@@ -6,7 +6,7 @@ uidir = ui
 otherdir = other
 
 [files]
-assets = ast.pne
+assets = dat/ast.pne
 storycontent = dat/store.sty
 savefile = dat/savefile
 regularfont = fonts/main.ttf
